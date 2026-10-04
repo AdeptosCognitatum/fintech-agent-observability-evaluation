@@ -308,7 +308,10 @@ Both run AFTER the LLM responds — they validate the OUTPUT.
 
 try:
     from guardrails import Guard
-    from guardrails.hub import RegexMatch, CompetitorCheck
+    ### ⛔️ (DEPRECATED) from guardrails.hub import RegexMatch, CompetitorCheck
+    # Do it like below from now on:
+    from guardrails_ai.regex_match import RegexMatch
+    from guardrails_ai.competitor_check import CompetitorCheck
 
     # Regex-based validator: catches SSN patterns (free, fast)
     # RegexMatch with match_type="search" treats a match as VALID.

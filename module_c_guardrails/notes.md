@@ -367,7 +367,8 @@ guardrails hub install hub://guardrails/competitor_check
 
 ```python
 from guardrails import Guard
-from guardrails.hub import RegexMatch
+### ⛔️ (DEPRECATED) from guardrails.hub import RegexMatch
+from guardrails_ai.regex_match import RegexMatch
 
 guard = Guard().use(
     RegexMatch(
@@ -433,7 +434,8 @@ Regex is a **first line of defense**, not a complete solution. Layer it with Pre
 Uses an LLM to detect toxic, offensive, or harmful content in the input or output:
 
 ```python
-from guardrails.hub import ToxicLanguage
+### ⛔️ (DEPRECATED) from guardrails.hub import ToxicLanguage
+from guardrails_ai.toxic_language import ToxicLanguage
 
 guard = Guard().use(
     ToxicLanguage(on_fail="exception")
@@ -449,7 +451,8 @@ guard = Guard().use(
 Detects mentions of competitor brands:
 
 ```python
-from guardrails.hub import CompetitorCheck
+### ⛔️ (DEPRECATED) from guardrails.hub import CompetitorCheck
+from guardrails_ai.competitor_check import CompetitorCheck
 
 # NOTE: CompetitorCheck uses entity matching, not substring matching.
 # "Chase Bank" is a different entity than "Chase" — include both variants.
@@ -468,7 +471,10 @@ guard = Guard().use(
 
 ```python
 from guardrails import Guard
-from guardrails.hub import RegexMatch, ToxicLanguage, CompetitorCheck
+### ⛔️ (DEPRECATED) from guardrails.hub import RegexMatch, ToxicLanguage, CompetitorCheck
+from guardrails_ai.regex_match import RegexMatch
+from guardrails_ai.toxic_language import ToxicLanguage
+from guardrails_ai.competitor_check import CompetitorCheck
 
 guard = Guard().use_many(
     RegexMatch(regex=r"(?s)^(?!.*\b\d{3}-\d{2}-\d{4}\b).*$", match_type="search", on_fail="exception"),

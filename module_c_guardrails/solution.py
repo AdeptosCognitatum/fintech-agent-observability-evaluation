@@ -93,7 +93,11 @@ print("=" * 60)
 
 try:
     from guardrails import Guard
-    from guardrails.hub import RegexMatch, ToxicLanguage, CompetitorCheck
+    ### ⛔️ (DEPRECATED) from guardrails.hub import RegexMatch, ToxicLanguage, CompetitorCheck
+    # Do it like below from now on:
+    from guardrails_ai.regex_match import RegexMatch
+    from guardrails_ai.toxic_language import ToxicLanguage
+    from guardrails_ai.competitor_check import CompetitorCheck
 
     # --- SOLUTION 2: RegexMatch for SSN ---
     # NOTE: match_type="search" treats a regex match as VALID (pass).

@@ -203,10 +203,17 @@ Before installing hub validators, you need a free Guardrails Hub token:
 
 Then install the validators:
 
+***Deprecated:***
 ```bash
 guardrails hub install hub://guardrails/regex_match
 guardrails hub install hub://guardrails/toxic_language
 guardrails hub install hub://guardrails/competitor_check
+```
+Try this instead:
+```bash
+pip install guardrails-ai-regex-match
+pip install guardrails-ai-toxic_language
+pip install guardrails-ai-competitor_check
 ```
 
 > **Note**: Presidio requires the spaCy `en_core_web_lg` model for NER-based PII detection. The `spacy download` command above installs it (~560 MB).
